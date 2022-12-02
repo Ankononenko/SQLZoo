@@ -138,16 +138,59 @@ Umlaut
 Find all details of the prize won by PETER GRÜNBERG
 */
 
+SELECT *
+FROM nobel
+WHERE winner LIKE 'PETER GR[Ü]NBERG'
 
+/*
+Apostrophe
+12.
+Find all details of the prize won by EUGENE O'NEILL
+*/
 
+/*
+Single quotes are escaped by doubling them up
+*/
 
+SELECT *
+FROM nobel
+WHERE winner = 'EUGENE O''NEILL'
 
+/*
+Knights of the realm
+13.
+Knights in order
 
+List the winners, year and subject where the winner starts with Sir. Show the the most recent first, then by name order.
+*/
 
+SELECT winner
+	,yr
+	,subject
+FROM nobel
+WHERE winner LIKE 'Sir%'
+ORDER BY yr DESC
+	,winner ASC
 
+/*
+Chemistry and Physics last
+14.
+The expression subject IN ('chemistry','physics') can be used as a value - it will be 0 or 1.
 
+Show the 1984 winners and subject ordered by subject and winner name; but list chemistry and physics last.
+*/
 
+/*
+Solution works only on MySQL engine
+*/
 
-
-
-
+SELECT winner
+	,subject
+FROM nobel
+WHERE yr = 1984
+ORDER BY subject IN (
+		'Physics'
+		,'Chemistry'
+		)
+	,subject
+	,winner
