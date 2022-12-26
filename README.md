@@ -1,6 +1,6 @@
 # SQLZoo
-Solutions to the SQL questions on https://sqlzoo.net/wiki/SQL_Tutorial
-
+Solutions to the SQL questions on https://sqlzoo.net/wiki/SQL_Tutorial 
+---
 ### 0 SELECT basics
 Some simple queries to get you started
 ### 1 SELECT name
